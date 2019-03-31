@@ -33,34 +33,22 @@ import { addBug } from './BugActions';
     }
   }
   
+
   class HomeScreen extends React.Component {
+    handleSignOut = () => {
+      Auth.signOut()
+        .then(() => this.props.navigation.navigate('Authentication'))
+        .catch(err => console.log(err));
+    }
     render() {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Home!</Text>
-        <Text>We have { this.props.screenProps.currentBugs.length } bugs!</Text>
-          <Button
-            title="Go to your fly library"
-            onPress={() => this.props.navigation.navigate('Bugs')}
-          />
-        </View>
+        
+        <Home />
+        
       );
     }
   }
   
-  class SettingsScreen extends React.Component {
-    render() {
-      return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Settings</Text>
-          <Button
-            title="Go back to home"
-            onPress={() => this.props.navigation.navigate('Home')}
-          />
-        </View>
-      );
-    }
-  }
 
 
   const HomeStack = createStackNavigator({
@@ -68,17 +56,11 @@ import { addBug } from './BugActions';
     Details: DetailsScreen,
   });
   
-  const SettingsStack = createStackNavigator({
-    Settings: SettingsScreen,
-    Details: DetailsScreen,
-  });
-  
   export default createAppContainer(createBottomTabNavigator(
     {
       Authentication: { screen: Authentication },
-      Home: HomeStack,
+      Home: {screen: Home },
       Bugs: { screen: Bugs},
-      Settings: SettingsStack,
     },
     {
       /* Other configuration remains unchanged */

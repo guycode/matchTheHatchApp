@@ -13,9 +13,25 @@ export default class Authentication extends React.Component {
           confirmPassword: '',
           confirmationCode: '',
           modalVisible: false,
+          selectedIndex: 0,
         };
+    this.buttons = ['Sign Up', 'Sign In']
       }
+    updateIndex = () => {
+        // if selectedIndex was 0, make it 1. if it was 1, make it 0 dammit
+        const newIndex = this.state.selectedIndex === 0 ? 1 : 0
+        this.setState({ selectedIndex: newIndex })
+    }
     
+    handleSignIn = () => {
+        const { email, password } = this.state;
+        Auth.signIn(email, password)
+          // If we are successful, navigate to Home screen
+          .then(user => this.props.navigation.navigate('Home'))
+          // On failure, display error in console
+          .catch(err => console.log(err));
+      }
+      
       handleSignUp = () => {
         // Show the current state object
         //alert(JSON.stringify(this.state));
@@ -54,65 +70,71 @@ export default class Authentication extends React.Component {
                     selectedIndex={this.state.selectedIndex}
                     buttons={ this.buttons }
                 />
-                <Input
-                    label="Email"
-                    leftIcon={{ type: "font-awesome", name: "envelope" }}
-                    onChangeText={
-                        (value) => this.setState({ email: value })
-                    }
-                    placeholder="my@email.com"
-                />
-                <Input
-                    label="Password"
-                    leftIcon={{ type: "font-awesome", name: "lock" }}
-                    onChangeText={
-                        // Set this.state.password to the value in this Input box
-                        (value) => this.setState({ password: value })
-                      }
-                    placeholder="myP@ssw0rd123"
-                    secureTextEntry
-                />
-                <Input
-                    label="Confirm Password"
-                    leftIcon={{ type: "font-awesome", name: "lock" }}
-                    onChangeText={
-                        // Set this.state.password to the value in this Input box
-                        (value) => this.setState({ confirmPassword: value})
-                      }
-                    placeholder="myP@ssw0rd123"
-                    secureTextEntry
-                />
-                <Button 
-                    title="Submit"
-                    onPress={ this.handleSignUp } 
-                />
-                <Input 
-                    label="Email"
-                    leftIcon={{ type: 'font-awesome', name: 'envelope' }}
-                    onChangeText={
-                        (value) => this.setState({ email: value })
-                    }
-                    placeholder="my@email.com"
-                />
-                <Input
-                    label="Password"
-                    leftIcon={{ type: 'font-awesome' name: 'lock' }}
-                    onChangeText={
-                        (value) => this.setState({ password: value })
-                    }
-                    placeholder="myP@ssw0rd123"
-                    secureTextEntry
-                    />
-                <Button
-                    title='Submit'
-                    onPress={ this.handleSignIn }
-                />
-                <Modal
-                    visible={this.state.modalVisible}
-                    >
-                    <View
-                        style={styles.container}
-                    >
+            { this.state.selectedIndex === 0 ? (
+  <View style={styles.container}>
+    <Input
+      label="Email"
+      leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+      onChangeText={
+        // Set this.state.email to the value in this Input box
+        (value) => this.setState({ email: value })
+      }
+      placeholder="my@email.com"
+    />
+    <Input
+      label="Password"
+      leftIcon={{ type: 'font-awesome', name: 'lock' }}
+      onChangeText={
+        // Set this.state.email to the value in this Input box
+        (value) => this.setState({ password: value })
+      }
+      placeholder="passw0rd123"
+      secureTextEntry
+    />
+    <Input
+      label="Confirm Password"
+      leftIcon={{ type: 'font-awesome', name: 'lock' }}
+      onChangeText={
+        // Set this.state.email to the value in this Input box
+        (value) => this.setState({ confirmPassword: value })
+      }
+      placeholder="passw0rd123"
+      secureTextEntry
+    />
+    <Button
+      title='Submit'
+      onPress={ this.handleSignUp }
+    />
+  </View>
+) : (
+  <View style={styles.container}>
+    <Input
+      label="Email"
+      leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+      onChangeText={
+        // Set this.state.email to the value in this Input box
+        (value) => this.setState({ email: value })
+      }
+      placeholder="my@email.com"
+    />
+    <Input
+      label="Password"
+      leftIcon={{ type: 'font-awesome', name: 'lock' }}
+      onChangeText={
+        // Set this.state.email to the value in this Input box
+        (value) => this.setState({ password: value })
+      }
+      placeholder="passw0rd123"
+      secureTextEntry
+    />
+    <Button
+      title='Submit'
+      onPress={ this.handleSignIn }
+    />
+  </View>
+) }
+                <Modal visible={this.state.modalVisible}>
+                    <View style={styles.container}>
                         <Input
                             label="Confirmation Code"
                             leftIcon={{ type: 'font-awesome', name: 'lock' }}
@@ -137,5 +159,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-    },
-  });
+      width: '90%',
+      height: '30%',
+      
+    }});
