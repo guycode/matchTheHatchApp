@@ -35,9 +35,19 @@ export class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    justifyContent: 'space-between',
+    backgroundColor: '#6B8E23',
     alignItems: 'center',
-    justifyContent: 'center',
+    width: '100%',
+  },
+  h1: {
+    color: '#008F68',
+    fontSize: 40,
+  },
+  h2: {
+    color: '#FAE042',
+    fontSize: 18,
+    marginTop: 4,
   },
 });
 

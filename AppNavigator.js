@@ -59,8 +59,8 @@ import { addBug } from './BugActions';
   export default createAppContainer(createBottomTabNavigator(
     {
       Authentication: { screen: Authentication },
-      Home: {screen: Home },
       Bugs: { screen: Bugs},
+      Home: {screen: Home },
     },
     {
       /* Other configuration remains unchanged */

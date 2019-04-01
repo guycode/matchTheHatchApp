@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Modal } from 'react-native';
+import { StyleSheet, Text, View, Modal, Image } from 'react-native';
 import { Input, Button, ButtonGroup } from 'react-native-elements';
 import { Auth } from 'aws-amplify';
+import Logo from './assets/fly_icon.png';
 
 export default class Authentication extends React.Component {
     
@@ -14,9 +15,11 @@ export default class Authentication extends React.Component {
           confirmationCode: '',
           modalVisible: false,
           selectedIndex: 0,
+          
         };
-    this.buttons = ['Sign Up', 'Sign In']
-      }
+        this.buttons = ['Sign Up', 'Sign In'] 
+    }
+      
     updateIndex = () => {
         // if selectedIndex was 0, make it 1. if it was 1, make it 0 dammit
         const newIndex = this.state.selectedIndex === 0 ? 1 : 0
@@ -64,8 +67,15 @@ export default class Authentication extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Welcome to Match The Hatch</Text>
+                <Text style={styles.h1}>Match The Hatch</Text>
+                <Text style={styles.h2}>Rippin' lips since '06</Text>
+                <Image
+          source={Logo}
+          style={styles.image}
+        />
                 <ButtonGroup    
+                    style={styles.button}
+                    color={"#fff"}
                     onPress={this.updateIndex}
                     selectedIndex={this.state.selectedIndex}
                     buttons={ this.buttons }
@@ -79,7 +89,7 @@ export default class Authentication extends React.Component {
         // Set this.state.email to the value in this Input box
         (value) => this.setState({ email: value })
       }
-      placeholder="my@email.com"
+      placeholder=" my@email.com"
     />
     <Input
       label="Password"
@@ -88,7 +98,7 @@ export default class Authentication extends React.Component {
         // Set this.state.email to the value in this Input box
         (value) => this.setState({ password: value })
       }
-      placeholder="passw0rd123"
+      placeholder=" passw0rd123"
       secureTextEntry
     />
     <Input
@@ -98,7 +108,7 @@ export default class Authentication extends React.Component {
         // Set this.state.email to the value in this Input box
         (value) => this.setState({ confirmPassword: value })
       }
-      placeholder="passw0rd123"
+      placeholder=" passw0rd123"
       secureTextEntry
     />
     <Button
@@ -115,7 +125,7 @@ export default class Authentication extends React.Component {
         // Set this.state.email to the value in this Input box
         (value) => this.setState({ email: value })
       }
-      placeholder="my@email.com"
+      placeholder=" my@email.com"
     />
     <Input
       label="Password"
@@ -124,7 +134,7 @@ export default class Authentication extends React.Component {
         // Set this.state.email to the value in this Input box
         (value) => this.setState({ password: value })
       }
-      placeholder="passw0rd123"
+      placeholder=" passw0rd123"
       secureTextEntry
     />
     <Button
@@ -156,10 +166,27 @@ export default class Authentication extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
       justifyContent: 'center',
-      width: '90%',
-      height: '30%',
-      
-    }});
+      backgroundColor: '#6B8E23',
+      alignItems: 'center',
+      width: '100%',
+    },
+    h1: {
+      color: '#000',
+      fontSize: 40,
+      marginTop: 35,
+    },
+    h2: {
+      color: '#FAE042',
+      fontSize: 18,
+      marginTop: 4,
+    },
+    image: {
+        width: 350,
+        height: 200,
+        justifyContent: 'center',
+      },
+  
+});
+  
+    
