@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
-      backgroundColor: '#6B8E23',
+      backgroundColor: '#fff',
       alignItems: 'center',
       width: '100%',
     },
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
       marginTop: 35,
     },
     h2: {
-      color: '#FAE042',
+      color: '#900',
       fontSize: 18,
       marginTop: 4,
     },

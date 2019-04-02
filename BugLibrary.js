@@ -37,16 +37,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#6B8E23',
+    backgroundColor: '#fff',
     alignItems: 'center',
     width: '100%',
   },
   h1: {
-    color: '#008F68',
+    color: '#000',
     fontSize: 40,
   },
   h2: {
-    color: '#FAE042',
+    color: '#500',
     fontSize: 18,
     marginTop: 4,
   },

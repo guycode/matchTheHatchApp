@@ -13,12 +13,14 @@ import {
     createStackNavigator,
     createAppContainer,
   } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import Authentication from './Authentication'
 import Home from './Home';
 import Bugs from './BugLibrary';
-import Articles1 from './articles1';
-
+import Saved from './Saved';
+import Region from './Region';
+import Shop from './Shop';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
@@ -53,9 +55,45 @@ import { addBug } from './BugActions';
   export default createAppContainer(createBottomTabNavigator(
     {
       Authentication: { screen: Authentication },
-      Bugs: { screen: Bugs},
-      Home: {screen: Home },
-      List: {screen: Articles1}, 
+      Region: {screen: Region,
+        navigationOptions: {
+        tabBarLabel: 'Region',
+        tabBarIcon: ({ tintColor }) => (
+      <Icon name="ios-map" color={tintColor} size={24} />
+    )
+  } },
+      Bugs: { screen: Bugs,
+        navigationOptions: {
+          tabBarLabel: 'BUGS',
+          tabBarIcon: ({ tintColor }) => (
+            <Icon name="ios-bug" color={tintColor} size={24} />
+          )
+        }},
+      Home: {screen: Home,
+              navigationOptions: {
+              tabBarLabel: 'HOME',
+              tabBarIcon: ({ tintColor }) => (
+            <Icon name="ios-home" color={tintColor} size={24} />
+          )
+        } },
+      Saved: {
+        screen: Saved,
+        navigationOptions: {
+          tabBarLabel: 'SAVED',
+          tabBarIcon: ({ tintColor }) => (
+            <Icon name="ios-heart-empty" color={tintColor} size={24} />
+          )
+        }
+      },
+      Shop: {
+        screen: Shop,
+        navigationOptions: {
+          tabBarLabel: 'SHOP',
+          tabBarIcon: ({ tintColor }) => (
+            <Icon name="ios-pricetag" color={tintColor} size={24} />
+          )
+        }
+      },
     },
     {
       /* Other configuration remains unchanged */

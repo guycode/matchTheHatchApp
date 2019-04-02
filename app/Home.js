@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
 import { Button } from 'react-native-elements';
 import { Auth } from 'aws-amplify';
-import Bugs from './BugLibrary';
+import Bugs from '../BugLibrary';
 
 export class Home extends React.Component {
   handleSignOut = () => {
@@ -36,18 +36,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#6B8E23',
     alignItems: 'center',
     width: '100%',
     textDecorationColor: 'red',
   },
   h1: {
-    color: '#000',
+    color: '#008F68',
     paddingTop: 4, 
     fontSize: 40,
   },
   h2: {
-    color: '#500',
+    color: '#FAE042',
     fontSize: 18,
     marginTop: 4,
   },
