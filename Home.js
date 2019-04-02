@@ -35,13 +35,15 @@ export class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     backgroundColor: '#6B8E23',
     alignItems: 'center',
     width: '100%',
+    textDecorationColor: 'red',
   },
   h1: {
     color: '#008F68',
+    paddingTop: 4, 
     fontSize: 40,
   },
   h2: {
