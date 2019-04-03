@@ -14,12 +14,13 @@ export class Home extends React.Component {
       .catch(err => console.log(err));
   }
 
-
-  
   constructor() {
     super()
-    this.handlePress = this.handlePress.bind(this)
+    this.state = this.handlePress.bind(this)
+    this.state = object={bugs:[]}
   }
+
+
 
   handlePress() {
     return this.props.navigation.navigate('./Camera')
@@ -27,7 +28,7 @@ export class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-       <Text> We have { this.props.bugs.current.length } bugs!</Text>
+       <Text> We have { this.state.bugs.length } bugs!</Text>
         {/* <Button
           title={ "Add some bugs" }
           onPress={() =>
@@ -65,9 +66,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state) => {
-  const { bugs } = state
-  return { bugs }
-};
 
-export default connect(mapStateToProps)(Home);
+
+export default connect()(Home);

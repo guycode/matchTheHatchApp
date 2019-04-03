@@ -81,6 +81,7 @@ export default class MyCamera extends Component {
         quality: 0.7,
         base64: true
       })
+      
       this.props.navigation.navigate('Results', {
         base64: pic
       })
