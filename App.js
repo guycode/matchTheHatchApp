@@ -16,8 +16,8 @@ export default class App extends React.Component {
   }
 } */
 
- import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
 import {
   createBottomTabNavigator,
   createStackNavigator,

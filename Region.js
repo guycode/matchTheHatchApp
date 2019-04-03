@@ -18,15 +18,10 @@ export default class Posts extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1, title: "Colorado", image:"https://lorempixel.com/400/200/nature/6/"},
-        {id:2, title: "Wyoming", image:"https://lorempixel.com/400/200/nature/5/"} ,
-        {id:3, title: "Montana ", image:"https://lorempixel.com/400/200/nature/4/"},
-        {id:4, title: "Nevada", image:"https://lorempixel.com/400/200/nature/6/"}, 
-        {id:5, title: "Utah", image:"https://lorempixel.com/400/200/sports/1/"}, 
-        {id:6, title: "Idaho", image:"https://lorempixel.com/400/200/nature/8/"}, 
-        {id:7, title: "Washington", image:"https://lorempixel.com/400/200/nature/1/"}, 
-        {id:8, title: "Oregon", image:"https://lorempixel.com/400/200/nature/3/"},
-        {id:9, title: "North Dakota", image:"https://lorempixel.com/400/200/nature/4/"},
+        {id:1, title: "Colorado", image:"https://bit.ly/2HUkmcl"},
+        {id:2, title: "Wyoming", image:"https://bit.ly/2FKtSLL"} ,
+        {id:4, title: "Nevada", image:"https://bit.ly/2UqR76J"}, 
+        {id:3, title: "Montana ", image:"https://bit.ly/2I6wNkJ"},
       ]
     };
   }
