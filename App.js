@@ -30,11 +30,14 @@ import AppNavigator from './AppNavigator';
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
 
+
 Amplify.configure(aws_exports);
 
 process.nextTick = setImmediate
 
 const store = createStore(bugReducer);
+
+
 
 export default class App extends React.Component {
 

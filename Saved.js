@@ -9,7 +9,7 @@ class Saved extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Saved</Text>
+            <Text>Saved Bugs Go Here</Text>
             </View>
         );
     }

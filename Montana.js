@@ -18,15 +18,9 @@ export default class Posts extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1, title: "Colorado", image:"https://lorempixel.com/400/200/nature/6/"},
-        {id:2, title: "Wyoming", image:"https://lorempixel.com/400/200/nature/5/"} ,
-        {id:3, title: "Montana ", image:"https://lorempixel.com/400/200/nature/4/"},
-        {id:4, title: "Nevada", image:"https://lorempixel.com/400/200/nature/6/"}, 
-        {id:5, title: "Utah", image:"https://lorempixel.com/400/200/sports/1/"}, 
-        {id:6, title: "Idaho", image:"https://lorempixel.com/400/200/nature/8/"}, 
-        {id:7, title: "Washington", image:"https://lorempixel.com/400/200/nature/1/"}, 
-        {id:8, title: "Oregon", image:"https://lorempixel.com/400/200/nature/3/"},
-        {id:9, title: "North Dakota", image:"https://lorempixel.com/400/200/nature/4/"},
+        {id:1, title: "Caddis", image:"https://bit.ly/2FSGb9Y"},
+        {id:2, title: "Mayfly", image:"https://bit.ly/2FVgfus"} ,
+        {id:3, title: "Stonefly", image:"https://bit.ly/2FJUeO2"}, 
       ]
     };
   }
@@ -118,43 +112,3 @@ const styles = StyleSheet.create({
     height: 150,
     width: null,
   },
-  /******** card components **************/
-  title:{
-    fontSize:22,
-    color: "#ffffff",
-    marginTop: 10,
-    fontWeight:'bold'
-  },
-  time:{
-    fontSize:13,
-    color: "#ffffff",
-    marginTop: 5
-  },
-  icon: {
-    width:25,
-    height:25,
-  },
-  /******** social bar ******************/
-  socialBarContainer: {
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    flexDirection: 'row',
-    flex: 1
-  },
-  socialBarSection: {
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    flex: 1,
-  },
-  socialBarlabel: {
-    marginLeft: 8,
-    alignSelf: 'flex-start',
-    justifyContent: 'center',
-    color: "#ffffff",
-  },
-  socialBarButton:{
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-});  

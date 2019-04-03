@@ -9,6 +9,7 @@
   "dependencies": {
     "aws-amplify": "^1.1.23",
     "aws-amplify-react-native": "^2.1.9",
+    "buffer": "^5.0.6",
     "body-parser": "^1.18.3",
     "clarifai": "^2.9.0",
     "expo": "^32.0.0",
@@ -19,6 +20,7 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-elements": "^1.1.0",
+    "react-native-image-picker": "^0.28.1",
     "react-navigation": "^3.5.1",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1"

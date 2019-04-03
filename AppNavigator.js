@@ -24,6 +24,8 @@ import Shop from './Shop';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
+import Results from './Results'
+import Camera from './Camera'
 
   
 /*   class DetailsScreen extends React.Component {
@@ -55,9 +57,17 @@ import { addBug } from './BugActions';
   export default createAppContainer(createBottomTabNavigator(
     {
       Authentication: { screen: Authentication },
+
+      Home: {screen: Home,
+        navigationOptions: {
+        tabBarLabel: 'HOME',
+        tabBarIcon: ({ tintColor }) => (
+      <Icon name="ios-home" color={tintColor} size={24} />
+    )
+    } },
       Region: {screen: Region,
         navigationOptions: {
-        tabBarLabel: 'Region',
+        tabBarLabel: 'REGION',
         tabBarIcon: ({ tintColor }) => (
       <Icon name="ios-map" color={tintColor} size={24} />
     )
@@ -69,13 +79,6 @@ import { addBug } from './BugActions';
             <Icon name="ios-bug" color={tintColor} size={24} />
           )
         }},
-      Home: {screen: Home,
-              navigationOptions: {
-              tabBarLabel: 'HOME',
-              tabBarIcon: ({ tintColor }) => (
-            <Icon name="ios-home" color={tintColor} size={24} />
-          )
-        } },
       Saved: {
         screen: Saved,
         navigationOptions: {
@@ -94,6 +97,21 @@ import { addBug } from './BugActions';
           )
         }
       },
+      Results: { screen: Results,
+        navigationOptions: {
+          tabBarLabel: 'RESULTS',
+          tabBarIcon: ({ tintColor }) => (
+            <Icon name="ios-list" color={tintColor} size={24} />
+          )
+        } 
+      },
+    Camera: { screen: Camera,
+      navigationOptions: {
+        tabBarLabel: 'CAMERA',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-camera" color={tintColor} size={24} />
+        )
+      }  }
     },
     {
       /* Other configuration remains unchanged */
