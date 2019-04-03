@@ -29,6 +29,8 @@ import bugReducer from './BugReducer';
 import AppNavigator from './AppNavigator';
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
+import { withAuthenticator } from 'aws-amplify-react-native';
+
 
 
 Amplify.configure(aws_exports);
@@ -39,7 +41,7 @@ const store = createStore(bugReducer);
 
 
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props)
@@ -80,3 +82,8 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default withAuthenticator(App, {
+  // Render a sign out button once logged in
+  includeGreetings: true,
+});

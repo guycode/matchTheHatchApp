@@ -15,7 +15,6 @@ import {
   } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import Authentication from './Authentication'
 import Home from './Home';
 import Bugs from './BugLibrary';
 import Saved from './Saved';
@@ -56,8 +55,6 @@ import Camera from './Camera'
   
   export default createAppContainer(createBottomTabNavigator(
     {
-      Authentication: { screen: Authentication },
-
       Home: {screen: Home,
         navigationOptions: {
         tabBarLabel: 'HOME',

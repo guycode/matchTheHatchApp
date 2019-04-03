@@ -13,19 +13,22 @@ export class Home extends React.Component {
       .then(() => this.props.navigation.navigate('Authentication'))
       .catch(err => console.log(err));
   }
+
+
+  
   constructor() {
     super()
     this.handlePress = this.handlePress.bind(this)
   }
 
   handlePress() {
-    return this.props.navigation.navigate('Camera')
+    return this.props.navigation.navigate('./Camera')
   }
   render() {
     return (
       <View style={styles.container}>
        <Text> We have { this.props.bugs.current.length } bugs!</Text>
-        <Button
+        {/* <Button
           title={ "Add some bugs" }
           onPress={() =>
             this.handlePress
@@ -35,7 +38,7 @@ export class Home extends React.Component {
          <Button
         title="Sign Out"
         onPress={this.handleSignOut}
-      />
+      /> */}
       </View>
     );
   }
