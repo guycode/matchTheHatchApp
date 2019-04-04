@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
@@ -11,49 +11,48 @@ class Bugs extends React.Component {
         super()
         this.state = object={bugs:[]}
       }
-      componentDidMount() {
-        return  fetch('http://localhost:8080/api/libraryLists')
-        .then(response => this.setState({bugs:response.json()
-    })).catch(function(error) {
-               console.log('There has been a problem on your compounentDidMount on BugLibrary: ' + error.message);
-     // ADD THIS THROW error
-      throw error;
-    });
-    }
+
+
+  
+
+      
+
   render() {
     return (
+      <ImageBackground  source={require('./assets/background.png')}  style={{transparency: '40%', width: '100%', height: '100%'}} >
       <View style={styles.container}>
-        <Text> Add bugs here! </Text>
-        
-         {/*  {this.state.bugs.possible.map((bug, index) => {
-            return (<Card style={styles.list}
-                      key={bug} 
-                      title={`Add ${bug}`} 
-                      onPress={() => 
-                        this.state.addBug(index) }/>)
-                        
+          <Text> Add bugs here! </Text>
+         
+          {this.props.bugs.possible.map((bug, index) => {
+            return (
+                      <Button
+                      title={`Add ${bug}`}
+                      onPress={this.state.bug}
+                      />
+                      )
       }
         )
-          } */}
-        <Button
-          title={ 'Go to my saved bugs' }
-          onPress={() =>
-            this.state.navigation.navigate('Saved')
           }
-        />
-        
-      </View>
-          
-    );
-  }
-}
 
+        
+              
+           <Button
+          title={ 'Back to home' }
+          onPress={() =>
+            this.props.navigation.navigate('Home')
+          }
+        />  
+  
+
+</ View>
+</ImageBackground>
+    )}}    
+    
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#fff',
     alignItems: 'center',
     width: '100%',
   },
@@ -69,6 +68,10 @@ const styles = StyleSheet.create({
   list: {
     backgroundColor:"#E6E6E6",
   },
+  image: {
+    width: 50,
+    height:50,
+  }
 });
 
 const mapDispatchToProps = dispatch => (

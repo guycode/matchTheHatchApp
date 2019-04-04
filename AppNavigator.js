@@ -23,8 +23,9 @@ import Shop from './Shop';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
-import Results from './Results'
-import Camera from './Camera'
+import Results from './Results';
+import Camera from './Camera';
+import masterList from './testList';
 
   
 /*   class DetailsScreen extends React.Component {
@@ -76,10 +77,10 @@ import Camera from './Camera'
             <Icon name="ios-bug" color={tintColor} size={24} />
           )
         }},
-      Saved: {
-        screen: Saved,
+      masterList: {
+        screen: masterList,
         navigationOptions: {
-          tabBarLabel: 'SAVED',
+          tabBarLabel: 'List',
           tabBarIcon: ({ tintColor }) => (
             <Icon name="ios-heart-empty" color={tintColor} size={24} />
           )

@@ -48,7 +48,8 @@ export default class Results extends Component {
         fetch("http://localhost:8080/api/libraryLists", {
             method:"POST",
             body: bodyData,
-            headers: { 'Content-type': 'application/json' }
+            headers: { 'Accept': 'application/json',
+            'Content-Type': 'application/json'}
         }).catch(function(error) {
             console.log('There has been a problem with your fetch operation: ' + error.message);
              // ADD THIS THROW error

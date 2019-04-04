@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
@@ -37,6 +37,7 @@ export class Home extends React.Component {
   }
   render() {
     return (
+      <ImageBackground  source={require('./assets/background.png')}  style={{transparency: '40%', width: '100%', height: '100%'}} >
       <View style={styles.container}>
        <Text> We have { this.state.bugs.length } bugs!</Text>
         {/* <Button
@@ -51,6 +52,7 @@ export class Home extends React.Component {
         onPress={this.handleSignOut}
       /> */}
       </View>
+      </ImageBackground>
     );
   }
 }
@@ -59,7 +61,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#fff',
     alignItems: 'center',
     width: '100%',
     textDecorationColor: 'red',

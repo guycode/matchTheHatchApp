@@ -125,14 +125,14 @@ export default class MyCamera extends Component {
               ) : (
                 <View>
                   <TouchableHighlight onPress={this.selectImage}>
-                    <Text>SELECT FROM GALLERY</Text>
+                    <Text></Text>
                   </TouchableHighlight>
                 </View>
               )}
             </View>
           </Camera>
           <TouchableHighlight onPress={this.selectImage}>
-                    <Text>SELECT FROM GALLERY</Text>
+                    <Text></Text>
                   </TouchableHighlight>
           <Button
                   onPress={this.snap}
