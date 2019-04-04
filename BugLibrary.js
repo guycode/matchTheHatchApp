@@ -3,26 +3,42 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
+import { Card } from 'react-native-elements';
+import { FlatList } from 'react-native-gesture-handler';
 
 class Bugs extends React.Component {
+  constructor() {
+        super()
+        this.state = object={bugs:[]}
+      }
+      componentDidMount() {
+        return  fetch('http://localhost:8080/api/libraryLists')
+        .then(response => this.setState({bugs:response.json()
+    })).catch(function(error) {
+               console.log('There has been a problem on your compounentDidMount on BugLibrary: ' + error.message);
+     // ADD THIS THROW error
+      throw error;
+    });
+    }
   render() {
     return (
       <View style={styles.container}>
         <Text> Add bugs here! </Text>
         
-          {this.props.bugs.possible.map((bug, index) => {
-            return (<Button 
+         {/*  {this.state.bugs.possible.map((bug, index) => {
+            return (<Card style={styles.list}
                       key={bug} 
                       title={`Add ${bug}`} 
                       onPress={() => 
-                        this.props.addBug(index) }/>)
+                        this.state.addBug(index) }/>)
+                        
       }
         )
-          }
+          } */}
         <Button
-          title={ 'Back to home' }
+          title={ 'Go to my saved bugs' }
           onPress={() =>
-            this.props.navigation.navigate('Home')
+            this.state.navigation.navigate('Saved')
           }
         />
         
@@ -49,6 +65,9 @@ const styles = StyleSheet.create({
     color: '#500',
     fontSize: 18,
     marginTop: 4,
+  },
+  list: {
+    backgroundColor:"#E6E6E6",
   },
 });
 

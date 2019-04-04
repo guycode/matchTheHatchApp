@@ -30,19 +30,36 @@ export default class Results extends Component {
     //this.setState({ results: concepts })
     
     
-    handlePressSAVE() {
+    /* handlePressSAVE() {
+        let bodyData = JSON.stringify(['outputs'][0]['data']['concepts]']);
         fetch("http://localhost:8080/api/libraryLists", {
             method:"POST",
-            body: JSON.stringify(['outputs'][0]['data']['concepts']),
+            body: bodyData,
             headers: { 'Content-type': 'application/json' }
         }).catch(function(error) {
             console.log('There has been a problem with your fetch operation: ' + error.message);
              // ADD THIS THROW error
               throw error;
             });
-        
       return this.props.navigation.navigate('Home')
-    }
+    } */
+    postData() {
+        let bodyData = JSON.stringify(this.state.concepts[0]);
+        fetch("http://localhost:8080/api/libraryLists", {
+            method:"POST",
+            body: bodyData,
+            headers: { 'Content-type': 'application/json' }
+        }).catch(function(error) {
+            console.log('There has been a problem with your fetch operation: ' + error.message);
+             // ADD THIS THROW error
+              throw error;
+            });
+/*       return this.props.navigation.navigate('Home')
+ */    }
+    handlePressSAVE() {
+        this.postData();        
+        return this.props.navigation.navigate('Home')
+      }
 
     handlePressTRYAGAIN() {
         console.log('failed after home')
