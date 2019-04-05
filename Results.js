@@ -23,8 +23,8 @@ export default class Results extends Component {
 /*             base64: 'add base64 image code here'*/
       })
       console.log(response)
-        const { concepts } = response.outputs[0].data
-        this.setState({ results: concepts[0].value > 0.8, concepts })
+        const  concepts  = response['outputs'][0]['data']['concepts']
+        this.setState({ /* results: concepts[0].value > 0.8, */ concepts })
     }
     // const  concepts  = response['outputs'][0]['data']['concepts']
     //this.setState({ results: concepts })
@@ -72,7 +72,7 @@ export default class Results extends Component {
 
   render() {
     return (
-      <View style={styles.resultsContainer}>
+      <View>
         
         {this.state.results === null ? (
           <ActivityIndicator size="large" color="#FFF" />
