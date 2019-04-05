@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 54276,
   "expoServerNgrokUrl": "https://7g-9iv.anonymous.matchthehatchapp.exp.direct",
   "packagerNgrokUrl": "https://packager.7g-9iv.anonymous.matchthehatchapp.exp.direct",
-  "ngrokPid": 50735,
+  "ngrokPid": 54303,
   "webpackServerPort": null
 }

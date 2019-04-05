@@ -9,7 +9,7 @@ import { FlatList } from 'react-native-gesture-handler';
 class Bugs extends React.Component {
   constructor() {
         super()
-        this.state = object={bugs:[]}
+        this.state = {bugs:[]}
       }
 
 

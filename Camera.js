@@ -56,6 +56,8 @@ import {
 import { Camera, Permissions } from 'expo'
 import ImagePicker from 'react-native-image-picker'
 
+/* const resultsTemplate = pug.compileFile('results.pug')
+ */
 export default class MyCamera extends Component {
   constructor() {
     super()

@@ -18,8 +18,9 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Home from './Home';
 import Bugs from './BugLibrary';
 import Saved from './Saved';
-import Region from './Region';
-import Shop from './Shop';
+/* import Region from './Region';
+ import Shop from './Shop';
+*/
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addBug } from './BugActions';
@@ -63,13 +64,13 @@ import masterList from './testList';
       <Icon name="ios-home" color={tintColor} size={24} />
     )
     } },
-      Region: {screen: Region,
+      /* Region: {screen: Region,
         navigationOptions: {
         tabBarLabel: 'REGION',
         tabBarIcon: ({ tintColor }) => (
       <Icon name="ios-map" color={tintColor} size={24} />
     )
-  } },
+  } }, */
       Bugs: { screen: Bugs,
         navigationOptions: {
           tabBarLabel: 'BUGS',
@@ -86,7 +87,7 @@ import masterList from './testList';
           )
         }
       },
-      Shop: {
+      /* Shop: {
         screen: Shop,
         navigationOptions: {
           tabBarLabel: 'SHOP',
@@ -94,7 +95,7 @@ import masterList from './testList';
             <Icon name="ios-pricetag" color={tintColor} size={24} />
           )
         }
-      },
+      }, */
       Results: { screen: Results,
         navigationOptions: {
           tabBarLabel: 'RESULTS',

@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 const INITIAL_STATE = {
   current: [],
   possible: [
-    'Caddis',
+    'Grasshopper',
     'Mayfly',
     'Blue Winged Olive',
     'Worm',

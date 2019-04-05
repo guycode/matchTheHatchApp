@@ -66,22 +66,16 @@ export default class Galleries extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1, likes:12, image:"https://lorempixel.com/400/200/nature/6/"},
-        {id:2, likes:11, image:"https://lorempixel.com/400/200/nature/5/"} ,
-        {id:3, likes:25, image:"https://lorempixel.com/400/200/nature/4/"}, 
-        {id:4, likes:12, image:"https://lorempixel.com/400/200/nature/6/"}, 
-        {id:5, likes:10, image:"https://lorempixel.com/400/200/sports/1/"}, 
-        {id:6, likes:12, image:"https://lorempixel.com/400/200/nature/8/"}, 
-        {id:7, likes:34, image:"https://lorempixel.com/400/200/nature/1/"}, 
-        {id:8, likes:45, image:"https://lorempixel.com/400/200/nature/3/"},
-        {id:9, likes:32, image:"https://lorempixel.com/400/200/nature/4/"},
-        {id:9, likes:56, image:"https://lorempixel.com/400/200/nature/5/"},
+        {id:1, name: 'Salmon Fly', image:"https://bit.ly/2uMpYgd"},
+        {id:2, name: 'Caddis Fly', image:"https://bit.ly/2HZJbDR"} ,
+        {id:3, name: 'Stonefly', image:"https://bit.ly/2Uiaq2T"}, 
+        {id:4, name: 'Midge', image:"https://bit.ly/2uNU8Q9"}, 
       ]
     };
   }
 
-  addProductToCart = () => {
-    Alert.alert('Success', 'The product has been added to your cart')
+  addBugToList = () => {
+    Alert.alert('Success', 'The bug has been added')
   }
 
   render() {
@@ -108,15 +102,8 @@ export default class Galleries extends Component {
                 <View style={styles.cardFooter}>
                   <View style={styles.socialBarContainer}>
                     <View style={styles.socialBarSection}>
-                      <TouchableOpacity style={styles.socialBarButton} onPress={() => this.addProductToCart()}>
-                        <Image style={styles.icon} source={{uri: 'https://png.icons8.com/flat_round/50/000000/share.png'}}/>
-                        <Text style={[styles.socialBarLabel, styles.share]}>Share</Text>
-                      </TouchableOpacity>
-                    </View>
-                    <View style={styles.socialBarSection}>
-                      <TouchableOpacity style={styles.socialBarButton}>
-                        <Image style={styles.icon} source={{uri: 'https://png.icons8.com/color/50/000000/hearts.png'}}/>
-                        <Text style={styles.socialBarLabel}>{item.likes}</Text>
+                      <TouchableOpacity style={styles.socialBarButton} onPress={() => this.addBugToList()}>
+                        <Text style={[styles.socialBarLabel, styles.share]}>Save { (this.name) }</Text>
                       </TouchableOpacity>
                     </View>
                   </View>
