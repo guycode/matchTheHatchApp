@@ -76,6 +76,7 @@ export default class Galleries extends Component {
 
   addBugToList = () => {
     Alert.alert('Success', 'The bug has been added')
+    
   }
 
   render() {
